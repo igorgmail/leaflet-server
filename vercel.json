@@ -1,19 +1,18 @@
 {
   "version": 2,
   "builds": [
-  {
-    "src": "app.js",
-    "use": "@vercel/node",
-    "config": {
-      "includeFiles": [
-        "dist/**"
-      ]
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
-  }
   ],
   "routes": [
   {
-    "src": "/apisetting(.*)",
+    "src": "/apisetting/(.*)",
     "dest": "app.js"
   }
   ]

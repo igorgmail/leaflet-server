@@ -1,11 +1,19 @@
 {
-  "version": 3,
-  "overrides": {
-    "data": {
-      "contentType": "application/json"
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
     },
-    "another.html": {
-      "path": "something-else"
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
+],
+"routes": [
+  {
+    "src": "/apisetting/(.*)",
+    "dest": "app.js"
   }
+  ]
 }
