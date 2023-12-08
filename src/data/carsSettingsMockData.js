@@ -9,21 +9,21 @@ export const mockData = {
     {
       car_id: "1",
       name: "VW Passat",
-      pic: '/img/car1.png',//"http://89.108.99.163/pics/car1.png",
+      pic: 'https://leaflet-server-igorgmail.vercel.app/pics/car1.png',//"http://89.108.99.163/pics/car1.png",
       imei: "350612070317373",
       alter_imei: '350612070317373'
     },
     {
       car_id: "2",
       name: "Renault Master",
-      pic: '/img/car2.png',//"http://89.108.99.163/pics/car2.png",
+      pic: 'https://leaflet-server-igorgmail.vercel.app/pics/car2.png',//"http://89.108.99.163/pics/car2.png",
       imei: "333",
       alter_imei: "444"
     },
     {
       car_id: "33",
       name: "Ларгус Иванов",
-      pic: '/img/car3.png',//"http://89.108.99.163/pics/car3.png",
+      pic: "https://leaflet-server-igorgmail.vercel.app/pics/car3.png",//'/img/car3.png',//"http://89.108.99.163/pics/car3.png",
       imei: "eeer",
       alter_imei: null
     }
@@ -90,39 +90,39 @@ export const mockData = {
   icons: [
     {
       icon_id: "1",
-      url: "http://89.108.99.163/pics/car1.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car1.png" //"http://89.108.99.163/pics/car1.png"
     },
     {
       icon_id: "2",
-      url: "http://89.108.99.163/pics/car2.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car2.png" //"http://89.108.99.163/pics/car2.png"
     },
     {
       icon_id: "3",
-      url: "http://89.108.99.163/pics/car3.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car3.png" //"http://89.108.99.163/pics/car3.png"
     },
     {
       icon_id: "4",
-      url: "http://89.108.99.163/pics/car4.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car4.png" //"http://89.108.99.163/pics/car4.png"
     },
     {
       icon_id: "5",
-      url: "http://89.108.99.163/pics/car5.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car5.png" //"http://89.108.99.163/pics/car5.png"
     },
     {
       icon_id: "6",
-      url: "http://89.108.99.163/pics/car6.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car6.png" //"http://89.108.99.163/pics/car6.png"
     },
     {
       icon_id: "7",
-      url: "http://89.108.99.163/pics/car7.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car7.png" //"http://89.108.99.163/pics/car7.png"
     },
     {
       icon_id: "8",
-      url: "http://89.108.99.163/pics/car8.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car8.png" //"http://89.108.99.163/pics/car8.png"
     },
     {
       icon_id: "9",
-      url: "http://89.108.99.163/pics/car9.png"
+      url: "https://leaflet-server-igorgmail.vercel.app/pics/car9.png" //"http://89.108.99.163/pics/car9.png"
     }
   ]
 }
