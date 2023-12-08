@@ -1,6 +1,5 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-const path = require('path');
 
 // const carsRoter = require('./carsRouter')
 import carsRoter from './src/routers/carsRouter.js'
@@ -22,7 +21,7 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, './public/')));
+app.use(express.static('public'));
 // app.use(requestIp.mw());
 
 // app.get('/head', (req, res) => {
