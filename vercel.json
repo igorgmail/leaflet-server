@@ -11,9 +11,14 @@
     }
   ],
   "routes": [
-  {
+    {
+      "src": "/",
+      "dest": "public"
+    },
+    {
     "src": "/apisetting/(.*)",
     "dest": "app.js"
   }
+  
   ]
 }
