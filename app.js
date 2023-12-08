@@ -21,6 +21,7 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'))
 // app.use(requestIp.mw());
 
 // app.get('/head', (req, res) => {
