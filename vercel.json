@@ -13,7 +13,7 @@
   ],
   "routes": [
   {
-    "src": "/apisetting/(.*)",
+    "src": "/apisetting(.*)",
     "dest": "app.js"
   }
   ]
