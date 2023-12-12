@@ -80,6 +80,17 @@ router.post('/create_short_link', async (req, res) => {
   }
 });
 
+// Создать запись о контрольной точке
+router.post('/create_point', async (req, res) => {
+  const pointData = req.body
+  try {
+    res.status(200).json(JSON.stringify(pointData)).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
 
 
 export default router;
