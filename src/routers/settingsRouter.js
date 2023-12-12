@@ -104,9 +104,9 @@ router.delete('/delete_point', async (req, res) => {
 
 // Обновить запись о контрольной точке
 router.post('/save_point', async (req, res) => {
-  const { updateData } = req.body
+  const updateData = req.body
   try {
-    res.status(200).json(JSON.stringify({ "msg": "Новые данные для обновления точки", "point_id": updateData })).end()
+    res.status(200).json({ "msg": "Новые данные для обновления точки", "point_id": updateData }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
