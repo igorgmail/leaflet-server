@@ -103,7 +103,7 @@ router.delete('/delete_point', async (req, res) => {
 });
 
 // Обновить запись о контрольной точке
-router.delete('/save_point', async (req, res) => {
+router.post('/save_point', async (req, res) => {
   const { updateData } = req.body
   try {
     res.status(200).json(JSON.stringify({ "msg": "Новые данные для обновления точки", "point_id": updateData })).end()
