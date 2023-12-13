@@ -84,7 +84,7 @@ router.post('/create_short_link', async (req, res) => {
 router.post('/create_point', async (req, res) => {
   const pointData = req.body
   try {
-    res.status(200).json({ "msg": "Будет Создана новая запись о точке", "pointData": pointData }).end()
+    res.status(200).json({ "msg": "Будет Создана новая запись о точке", "data": pointData }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
@@ -95,7 +95,7 @@ router.post('/create_point', async (req, res) => {
 router.delete('/delete_point', async (req, res) => {
   const { point_id } = req.body
   try {
-    res.status(200).json(JSON.stringify({ "msg": "Будет удалена точка", "point_id": point_id })).end()
+    res.status(200).json(JSON.stringify({ "msg": "Будет удалена точка", "data": point_id })).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
@@ -106,7 +106,7 @@ router.delete('/delete_point', async (req, res) => {
 router.post('/save_point', async (req, res) => {
   const updateData = req.body
   try {
-    res.status(200).json({ "msg": "Новые данные для обновления точки", "point_id": updateData }).end()
+    res.status(200).json({ "msg": "Новые данные для обновления точки", "data": updateData }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
