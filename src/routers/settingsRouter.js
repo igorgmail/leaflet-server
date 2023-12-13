@@ -131,6 +131,15 @@ router.post('/create_car', async (req, res) => {
   }
 });
 
-
+// Удалить запись о Автомобиле
+router.delete('/delete_car', async (req, res) => {
+  const { car_id } = req.body
+  try {
+    res.status(200).json({ "msg": "Будет удален Автомобиль", "data": car_id }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
 
 export default router;
