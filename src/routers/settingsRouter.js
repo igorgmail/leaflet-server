@@ -115,6 +115,18 @@ router.post('/save_point', async (req, res) => {
   }
 });
 
+// Создать запись об автомобиле
+router.post('/create_car', async (req, res) => {
+  const newCar = req.body
+  newCar.car_id = uniqid()
+  try {
+    res.status(200).json({ "msg": "Новый Автомобиль создан", "data": newCar }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
 
 
 export default router;
