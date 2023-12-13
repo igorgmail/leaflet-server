@@ -1,6 +1,6 @@
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-
+import uniqid from 'uniqid';
 
 const fetch = require('node-fetch');
 
@@ -84,6 +84,8 @@ router.post('/create_short_link', async (req, res) => {
 router.post('/create_point', async (req, res) => {
   const pointData = req.body
   try {
+
+    pointData.point_id = uniqid()
     res.status(200).json({ "msg": "Будет Создана новая запись о точке", "data": pointData }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
