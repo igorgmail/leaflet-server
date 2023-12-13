@@ -97,7 +97,7 @@ router.post('/create_point', async (req, res) => {
 router.delete('/delete_point', async (req, res) => {
   const { point_id } = req.body
   try {
-    res.status(200).json(JSON.stringify({ "msg": "Будет удалена точка", "data": point_id })).end()
+    res.status(200).json({ "msg": "Будет удалена точка", "data": point_id }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
