@@ -119,6 +119,9 @@ router.post('/save_point', async (req, res) => {
 router.post('/create_car', async (req, res) => {
   const newCar = req.body
   newCar.car_id = uniqid()
+  // Переназначение car_name на name
+  newCar.name = newCar.car_name;
+  delete newCar.car_name;
   try {
     res.status(200).json({ "msg": "Новый Автомобиль создан", "data": newCar }).end()
   } catch (error) {
