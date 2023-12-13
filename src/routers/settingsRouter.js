@@ -121,6 +121,7 @@ router.post('/create_car', async (req, res) => {
   newCar.car_id = uniqid()
   // Переназначение car_name на name
   newCar.name = newCar.car_name;
+  newCar.pic = 'https://leaflet-server-igorgmail.vercel.app/pics/car1.png';
   delete newCar.car_name;
   try {
     res.status(200).json({ "msg": "Новый Автомобиль создан", "data": newCar }).end()
