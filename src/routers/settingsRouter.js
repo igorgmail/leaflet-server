@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 
 const fetch = require('node-fetch');
 
-import { mockData } from '../data/carsSettingsMockData.js'
+import { mockData, mockUserData } from '../data/carsSettingsMockData.js'
 // /all_cars?park_id=3
 
 import getCarsData from '../utils/getCarsData.js'
@@ -202,6 +202,17 @@ router.delete('/delete_event', async (req, res) => {
 });
 
 // ? USER ROUTE
+// Получить пользователей
+router.get('/get_users', async (req, res) => {
+
+  try {
+    res.status(200).json({ "msg": "Новый пользователь создан", "data": JSON.stringify(mockUserData) }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
 // Создать запись об Пользователе
 router.post('/create_user', async (req, res) => {
   const { user_email, user_role } = req.body

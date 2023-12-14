@@ -126,3 +126,17 @@ export const mockData = {
     }
   ]
 }
+
+export const mockUserData = {
+  users: [
+    {
+      email: 'kenherli@gmail.com',
+      role: 'admin'
+    },
+    {
+      email: 'petrov@mail.pl',
+      role: 'user'
+    },
+
+  ]
+}
