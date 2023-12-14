@@ -124,16 +124,31 @@ export const mockData = {
       icon_id: "9",
       url: "https://leaflet-server-igorgmail.vercel.app/pics/car9.png" //"http://89.108.99.163/pics/car9.png"
     }
+  ],
+  users: [
+    {
+      id: '1',
+      email: 'kenherli@gmail.com',
+      role: 'admin'
+    },
+    {
+      id: '2',
+      email: 'petrov@mail.pl',
+      role: 'user'
+    },
+
   ]
 }
 
 export const mockUserData = {
   users: [
     {
+      id: '1',
       email: 'kenherli@gmail.com',
       role: 'admin'
     },
     {
+      id: '2',
       email: 'petrov@mail.pl',
       role: 'user'
     },
