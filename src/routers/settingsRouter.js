@@ -161,13 +161,13 @@ router.delete('/delete_car', async (req, res) => {
 
 // Создать запись о событии
 router.post('/create_event', async (req, res) => {
-  const { car_id, user_id, event, time_response_sec } = req.body
+  const { car_id, point_id, event, time_response_sec } = req.body
   const event_id = uniqid()
 
   try {
     res.status(200).json({
       "msg": "Новые событие создано", "data":
-        { car_id, user_id, event, time_response_sec, event_id }
+        { car_id, point_id, event, time_response_sec, event_id }
     }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
