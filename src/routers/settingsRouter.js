@@ -215,8 +215,8 @@ router.get('/get_users', async (req, res) => {
 
 // Создать запись об Пользователе
 router.post('/create_user', async (req, res) => {
-  const { user_email, user_role } = req.body
-  const new_user = { user_email, user_role, user_id: uniqid() }
+  const { email, role } = req.body
+  const new_user = { email, role, user_id: uniqid() }
 
   try {
     res.status(200).json({ "msg": "Новый пользователь создан", "data": new_user }).end()
