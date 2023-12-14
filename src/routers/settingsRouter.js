@@ -80,6 +80,7 @@ router.post('/create_short_link', async (req, res) => {
   }
 });
 
+// ? POINTS ROUTE
 // Создать запись о контрольной точке
 router.post('/create_point', async (req, res) => {
   const pointData = req.body
@@ -115,6 +116,7 @@ router.post('/save_point', async (req, res) => {
   }
 });
 
+// ? CAR ROUTE
 // Создать запись об автомобиле
 router.post('/create_car', async (req, res) => {
   const newCar = req.body
@@ -142,4 +144,85 @@ router.delete('/delete_car', async (req, res) => {
   }
 });
 
+// ? EVENTS ROUTE
+// Удалить запись о событии
+router.delete('/delete_event', async (req, res) => {
+  const { event_id } = req.body
+  try {
+    res.status(200).json({ "msg": "Будет удалено событие", "data": event_id }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
+// Создать запись о событии
+router.post('/create_event', async (req, res) => {
+  const { car_id, user_id, event, time_response_sec } = req.body
+  const event_id = uniqid()
+
+  try {
+    res.status(200).json({
+      "msg": "Новые событие создано", "data":
+        { car_id, user_id, event, time_response_sec, event_id }
+    }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+})
+
+// Обновить запись о событии
+router.post('/save_event', async (req, res) => {
+  const { car_id, user_id, event, time_response_sec, event_id } = req.body
+
+  try {
+    res.status(200).json({
+      "msg": "Запись о событии обновлена", "data":
+        { car_id, user_id, event, time_response_sec, event_id }
+    }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
+
+
+// ? USER ROUTE
+// Создать запись об Пользователе
+router.post('/create_user', async (req, res) => {
+  const { user_email, user_role } = req.body
+  const new_user = { user_email, user_role, user_id: uniqid() }
+
+  try {
+    res.status(200).json({ "msg": "Новый пользователь создан", "data": new_user }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
+// Обновить запись об Пользователе
+router.post('/save_user', async (req, res) => {
+  const { user_id, user_email, user_role } = req.body
+
+  try {
+    res.status(200).json({ "msg": "Запись пользователя обновлена", "data": { user_id, user_email, user_role } }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
+// Удалить запись о Пользателе
+router.delete('/delete_user', async (req, res) => {
+  const { user_id } = req.body
+  try {
+    res.status(200).json({ "msg": "Будет удален Ползователь", "data": user_id }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
 export default router;
