@@ -36,9 +36,9 @@ router.post('/save_company_name', async (req, res) => {
 // Обновить баланс компании
 router.get('/refresh_balance', async (req, res) => {
   const company_id = req.query?.company_id
-  console.log("Refresh Balance Company-id-->", company_id);
+  const balance = String(Math.floor(Math.random() * 1000))
   try {
-    res.status(200).json({ "balance": "1050", "msg": "Баланс обновлен" }).end()
+    res.status(200).json({ "balance": balance, "msg": "Баланс обновлен" }).end()
   } catch (error) {
     console.log("Error fetch to http://89.108.99.163/", error);
     res.status(501).end()
