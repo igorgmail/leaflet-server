@@ -133,6 +133,19 @@ router.post('/create_car', async (req, res) => {
   }
 });
 
+// Обновить запись об автомобиле
+router.post('/save_car', async (req, res) => {
+  const { car_id, car_name, icon, imei, alter_imei } = req.body
+  const update_car = { car_id, car_name, icon, imei, alter_imei };
+
+  try {
+    res.status(200).json({ "msg": "Запись об Автомобиле обновлена", "data": update_car }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
+
 // Удалить запись о Автомобиле
 router.delete('/delete_car', async (req, res) => {
   const { car_id } = req.body
@@ -145,16 +158,6 @@ router.delete('/delete_car', async (req, res) => {
 });
 
 // ? EVENTS ROUTE
-// Удалить запись о событии
-router.delete('/delete_event', async (req, res) => {
-  const { event_id } = req.body
-  try {
-    res.status(200).json({ "msg": "Будет удалено событие", "data": event_id }).end()
-  } catch (error) {
-    console.log("Error fetch to http://89.108.99.163/", error);
-    res.status(501).end()
-  }
-});
 
 // Создать запись о событии
 router.post('/create_event', async (req, res) => {
@@ -187,7 +190,16 @@ router.post('/save_event', async (req, res) => {
   }
 });
 
-
+// Удалить запись о событии
+router.delete('/delete_event', async (req, res) => {
+  const { event_id } = req.body
+  try {
+    res.status(200).json({ "msg": "Будет удалено событие", "data": event_id }).end()
+  } catch (error) {
+    console.log("Error fetch to http://89.108.99.163/", error);
+    res.status(501).end()
+  }
+});
 
 // ? USER ROUTE
 // Создать запись об Пользователе
