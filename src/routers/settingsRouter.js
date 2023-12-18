@@ -138,7 +138,7 @@ router.post('/save_car', async (req, res) => {
   const { car_id, name, pic, imei, alter_imei } = req.body
 
   if (name === 'error') {
-    res.status(401).end()
+    res.status(401).json({ "msg": "Ошибка при обновлении" }).end()
   }
 
   const update_car = { car_id, name, pic, imei, alter_imei };
