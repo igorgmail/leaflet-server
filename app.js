@@ -15,10 +15,7 @@ const requestIp = require('request-ip');
 
 const bodyParser = require('body-parser');
 const app = express();
-app.use(cors({
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-}))
+app.use(cors())
 
 
 app.use(bodyParser.json());
