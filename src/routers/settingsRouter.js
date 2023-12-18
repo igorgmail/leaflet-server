@@ -135,12 +135,16 @@ router.post('/create_car', async (req, res) => {
 
 // Обновить запись об автомобиле
 router.post('/save_car', async (req, res) => {
-  const { car_id, car_name, pic, imei, alter_imei } = req.body
-  const update_car = { car_id, car_name, pic, imei, alter_imei };
+  const { car_id, name, pic, imei, alter_imei } = req.body
 
-  if (car_name === 'error') {
+  if (name === 'error') {
     res.status(401).end()
   }
+
+  const update_car = { car_id, name, pic, imei, alter_imei };
+  update_car.car_name = name
+  update_car.name.delete()
+
   try {
     res.status(200).json({ "msg": "Запись об Автомобиле обновлена", "data": update_car }).end()
   } catch (error) {
