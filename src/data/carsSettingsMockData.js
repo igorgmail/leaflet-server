@@ -81,7 +81,21 @@ export const mockData = {
       point_id: "1",
       event: "OUT",
       time_response_sec: "20"
-    }
+    }, {
+      event_id: "1",
+      company_id: "1",
+      car_id: "2",
+      point_id: "2",
+      event: "IN",
+      time_response_sec: "0"
+    }, , {
+      event_id: "1",
+      company_id: "1",
+      car_id: "33",
+      point_id: "6",
+      event: "IN",
+      time_response_sec: "10"
+    },
   ],
   type_of_events: [
     "IN",
