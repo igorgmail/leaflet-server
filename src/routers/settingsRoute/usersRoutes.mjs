@@ -44,14 +44,12 @@ router.post('/create_user', async (req, res) => {
 
 // Удалить запись о Пользателе
 router.delete('/delete_user', async (req, res) => {
-  const userId = req.query;
-  console.log('▶ ⇛ eventData:', userId);
-
-  const param = `user_id=${userId}`;
+  const { user_id } = req.query;
+  console.log('▶ ⇛ user_id:', user_id);
+  const param = `user_id=${user_id}`;
 
   try {
     const goToServerCustomer = await fetch(`${url}/delete_user?${param}`, {
-      method: 'DELETE',
       headers,
     });
     const result = await goToServerCustomer.json();
