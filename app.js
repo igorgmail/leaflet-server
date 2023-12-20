@@ -3,9 +3,9 @@ const require = createRequire(import.meta.url);
 const path = require('path');
 
 // const carsRoter = require('./carsRouter')
-import carsRoter from './src/routers/carsRouter.js'
-import historyRouter from './src/routers/historyRoter.js'
-import settingsRouter from './src/routers/settingsRouter.js'
+import carsRouter from './src/routers/carsRouter.js'
+import historyRouter from './src/routers/historyRouter.js'
+import settingsRouter from './src/routers/settingsRouter.mjs'
 
 const cors = require('cors')
 const logger = require('morgan')
@@ -37,11 +37,11 @@ app.use(express.static('public'));
 //   res.json({ headers, query, params, body, ip, cookie, port, ips });
 // });
 
-app.use('/cars', carsRoter)
+app.use('/cars', carsRouter)
 app.use('/history', historyRouter)
 app.use('/apisetting', settingsRouter)
 
 // Запуск сервера на порту 3000
-app.listen(3002, () => {
-  console.log('Сервер запущен на порту 3002');
+app.listen(3005, () => {
+  console.log('Сервер запущен на порту 3005');
 });
