@@ -47,7 +47,7 @@ router.delete('/delete_user', async (req, res) => {
   const userId = req.query;
   console.log('▶ ⇛ eventData:', userId);
 
-  const param = `user_id=${55}`;
+  const param = `user_id=${userId}`;
 
   try {
     const goToServerCustomer = await fetch(`${url}/delete_user?${param}`, {
