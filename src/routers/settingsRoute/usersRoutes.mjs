@@ -51,7 +51,7 @@ router.delete('/delete_user', async (req, res) => {
 
   try {
     const goToServerCustomer = await fetch(`${url}/delete_user?${param}`, {
-      method: 'POST',
+      method: 'DELETE',
       headers,
     });
     const result = await goToServerCustomer.json();
